@@ -1,0 +1,20 @@
+
+const name = 'Scotch.io';
+
+import _ from 'underscore';
+import tungsten from 'tungstenjs';
+var AppView = require('./views/todo_app_view');
+var AppModel = require('./models/todo_app_model');
+import template from './temp.mustache'
+
+//setTimeout(() => alert(`Hello there from ${name}`), 300);document.write(require("./content.js"));
+var elem = document.getElementById('appwrapper');
+window.app = module.exports = new AppView({
+    el: elem,
+    template: template,
+    model: new AppModel(window.data),
+    dynamicInitialize: elem.childNodes.length == 0
+});
+
+var router = require('./app_router');
+router.init(window.app);
