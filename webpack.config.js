@@ -11,6 +11,7 @@ module.exports = {
             path.join(__dirname, 'loaders')
         ]
     },
+    devtool: 'source-map',
     module: {
         loaders: [
             {
